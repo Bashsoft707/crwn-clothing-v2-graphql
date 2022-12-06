@@ -9,7 +9,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const Category = () => {
   const { category } = useParams();
-  const GET_COLLECTION = gql`
+  const GET_CATEGORY = gql`
     query ($title: String) {
       getCollectionsByTitle(title: $title) {
         id
@@ -24,7 +24,7 @@ const Category = () => {
     }
   `;
 
-  const { loading, data } = useQuery(GET_COLLECTION, {
+  const { loading, data } = useQuery(GET_CATEGORY, {
     variables: { title: category },
   });
 
